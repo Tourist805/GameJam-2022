@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Explosion : MonoBehaviour
 {
-    [SerializeField] private float _power = 3.0f, _radius = 5.0f, _upForce = 1.0f;
+    [SerializeField] private float _power = 10.0f, _radius = 10.0f, _upForce = 0.5f;
 
     public void Explode()
     {

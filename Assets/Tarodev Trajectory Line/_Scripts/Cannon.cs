@@ -20,13 +20,20 @@ public class Cannon : MonoBehaviour {
     [SerializeField] private ParticleSystem _launchParticles;
 
     private void HandleControls() {
-        if (Input.GetKey(KeyCode.S)) _barrelPivot.Rotate(Vector3.forward * _rotateSpeed * Time.deltaTime);
-        else if (Input.GetKey(KeyCode.W)) _barrelPivot.Rotate(-Vector3.forward * _rotateSpeed * Time.deltaTime);
+        if (Input.GetKey(KeyCode.DownArrow))
+        {
+            _barrelPivot.Rotate(Vector3.forward * _rotateSpeed * Time.deltaTime);
+        }
+        else if (Input.GetKey(KeyCode.UpArrow))
+        {
+            _barrelPivot.Rotate(-Vector3.forward * _rotateSpeed * Time.deltaTime);
+        }
 
-        if (Input.GetKey(KeyCode.A)) {
+
+        if (Input.GetKey(KeyCode.LeftArrow)) {
             transform.Rotate(Vector3.down * _rotateSpeed * Time.deltaTime);
         }
-        else if (Input.GetKey(KeyCode.D)) {
+        else if (Input.GetKey(KeyCode.RightArrow)) {
             transform.Rotate(Vector3.up * _rotateSpeed * Time.deltaTime);
         }
 
