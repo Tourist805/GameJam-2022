@@ -17,6 +17,12 @@ public class CubeMovement : MonoBehaviour
     private void Update()
     {
         _moveDirection = new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical"));
-        _rigidbody.AddTorque(_moveDirection);
+        //_rigidbody.AddTorque(_moveDirection);
+        _rigidbody.AddForce(_moveDirection);
+    }
+
+    private void LateUpdate()
+    {
+        
     }
 }
