@@ -15,7 +15,7 @@ public class Ball : MonoBehaviour {
 
     public void OnCollisionEnter(Collision col) {
         if (_isGhost) return;
-        Instantiate(_poofPrefab, col.contacts[0].point, Quaternion.Euler(col.contacts[0].normal));
+        //Instantiate(_poofPrefab, col.contacts[0].point, Quaternion.Euler(col.contacts[0].normal));
         _source.clip = _clips[Random.Range(0, _clips.Length)];
         _source.Play();
     }

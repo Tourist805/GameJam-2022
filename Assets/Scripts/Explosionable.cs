@@ -14,7 +14,6 @@ public class Explosionable : MonoBehaviour
         {
             if(!ball.Ghost)
             {
-                Debug.Log("On Trigger Enter");
                 _explosion.Explode();
                 Instantiate(_explosionParticle, transform.position, Quaternion.identity);
                 Coin.AddPoints(BlockType.EXPLOSION);
