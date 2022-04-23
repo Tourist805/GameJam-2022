@@ -6,6 +6,7 @@ public class Ball : MonoBehaviour {
     [SerializeField] private AudioClip[] _clips;
     [SerializeField] private GameObject _poofPrefab;
     private bool _isGhost;
+    public bool Ghost => _isGhost;
 
     public void Init(Vector3 velocity, bool isGhost) {
         _isGhost = isGhost;

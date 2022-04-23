@@ -9,11 +9,16 @@ public class Explosionable : MonoBehaviour
     [SerializeField] private Explosion _explosion;
     private void OnTriggerEnter(Collider other)
     {
-        if(other.TryGetComponent(out Ball ball))
+
+        if (other.TryGetComponent(out Ball ball))
         {
-            _explosion.Explode();
-            Instantiate(_explosionParticle, transform.position, Quaternion.identity);
-            _gameObject.SetActive(false);
+            if(!ball.Ghost)
+            {
+                Debug.Log("On Trigger Enter");
+                _explosion.Explode();
+                Instantiate(_explosionParticle, transform.position, Quaternion.identity);
+                _gameObject.SetActive(false);
+            }
         }
     }
 }
