@@ -16,7 +16,7 @@ public class Breakable : MonoBehaviour {
             foreach (var rb in rbs) {
                 rb.AddExplosionForce(collision.relativeVelocity.magnitude * _collisionMultiplier, collision.contacts[0].point, 2);
             }
-
+            Coin.AddPoints(BlockType.BREAKABLE);
             gameObject.SetActive(false);
         }
     }

@@ -17,6 +17,7 @@ public class Explosionable : MonoBehaviour
                 Debug.Log("On Trigger Enter");
                 _explosion.Explode();
                 Instantiate(_explosionParticle, transform.position, Quaternion.identity);
+                Coin.AddPoints(BlockType.EXPLOSION);
                 _gameObject.SetActive(false);
             }
         }
