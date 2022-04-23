@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameOverScreen : MonoBehaviour
 {
@@ -19,10 +20,13 @@ public class GameOverScreen : MonoBehaviour
     public void ResetLevel()
     {
         Debug.Log("Restarting the level");
+        Coin.Count = 0;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void BackToMenu()
     {
         Debug.Log("Back to menu");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 }

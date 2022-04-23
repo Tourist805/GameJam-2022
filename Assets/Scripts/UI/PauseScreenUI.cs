@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseScreenUI : MonoBehaviour
 {
@@ -22,5 +23,6 @@ public class PauseScreenUI : MonoBehaviour
     public void BackToMenu()
     {
         Debug.Log("Back to menu");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 }
