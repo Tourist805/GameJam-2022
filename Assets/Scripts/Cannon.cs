@@ -2,8 +2,15 @@ using UnityEngine;
 
 public class Cannon : MonoBehaviour {
     [SerializeField] private Projection _projection;
+    [SerializeField] private PauseScreenUI _pauseScreenUI;
+    private bool _isPaused = false;
 
     private void Update() {
+        if(Input.GetKey(KeyCode.Escape))
+        {
+            _pauseScreenUI.ActivateWindow();
+            _isPaused = true;
+        }
         HandleControls();
         _projection.SimulateTrajectory(_ballPrefab, _ballSpawn.position, _ballSpawn.forward * _force);
     }
